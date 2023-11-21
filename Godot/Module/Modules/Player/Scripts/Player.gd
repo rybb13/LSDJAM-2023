@@ -7,6 +7,7 @@ extends CharacterBody3D
 
 @onready var anim_sprite = get_node("PlayerAnimSprite")
 
+var pressed_keys: Array
 var input = Vector2.ZERO
 var default_gravity = ProjectSettings.get_setting("physics/3d/default_gravity_vector")
 var default_gravity_scale = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -64,30 +65,20 @@ func apply_movement(direction: Vector3, speed: float, acceleration: float, decel
 		apply_deceleration(deceleration, gravity, delta)
 
 func update_mode_direction():
-	var right_pressed = Input.is_action_pressed("Right")
-	var right_just_pressed = Input.is_action_just_pressed("Right")
-	var left_pressed = Input.is_action_pressed("Left")
-	var left_just_pressed = Input.is_action_just_pressed("Left")
-	var up_pressed = Input.is_action_pressed("Up")
-	var up_just_pressed = Input.is_action_just_pressed("Up")
-	var down_pressed = Input.is_action_pressed("Down")
-	var down_just_pressed = Input.is_action_just_pressed("Down")
+	for key in [ "Right", "Left", "Up", "Down" ]:
+		var direction = Direction.get(key)
+		
+		if Input.is_action_just_pressed(key) && !pressed_keys.has(direction):
+			pressed_keys.push_back(direction)
+		
+		if Input.is_action_just_released(key) && pressed_keys.has(direction):
+			pressed_keys.erase(direction)
 	
-	if right_pressed or left_pressed or up_pressed or down_pressed:
-		if right_just_pressed:
-			mode = Mode.Walk
-			direction = Direction.Right
-		elif left_just_pressed:
-			mode = Mode.Walk
-			direction = Direction.Left
-		elif up_just_pressed:
-			mode = Mode.Walk
-			direction = Direction.Up
-		elif down_just_pressed:
-			mode = Mode.Walk
-			direction = Direction.Down
-	else:
+	if pressed_keys.is_empty():
 		mode = Mode.Stand
+	else:
+		mode = Mode.Walk
+		direction = pressed_keys.back()
 	
 func get_anim_name(player_mode: Mode, player_direction: Direction) -> String:
 	return Mode.keys()[player_mode] + Direction.keys()[player_direction]
