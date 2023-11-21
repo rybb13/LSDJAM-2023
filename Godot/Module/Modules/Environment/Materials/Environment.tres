@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bhehyec6y6wfg"]
+
+[ext_resource type="Shader" path="res://Module/Modules/Environment/Shaders/Environment.gdshader" id="1_dc5f4"]
+[ext_resource type="Texture2D" uid="uid://bujr21t7bof6f" path="res://Module/Modules/Environment/Images/Environment-8.png" id="2_lgylb"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_dc5f4")
+shader_parameter/frames = 8
+shader_parameter/speed = 0.6
+shader_parameter/size = 26.0
+shader_parameter/tint = Color(0.0980392, 0.0980392, 0.0980392, 1)
+shader_parameter/brightness = 0.001
+shader_parameter/contrast = 0.277
+shader_parameter/sprite_sheet = ExtResource("2_lgylb")

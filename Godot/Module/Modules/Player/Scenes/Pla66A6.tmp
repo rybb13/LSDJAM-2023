@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://cx3penl4n6k7m"]
+
+[ext_resource type="Script" path="res://Module/Modules/Player/Scripts/Player.gd" id="1_1x0dp"]
+[ext_resource type="SpriteFrames" uid="uid://dboreqab0yixl" path="res://Module/Modules/Player/Animations/SpriteFrames.tres" id="1_m0lfa"]
+[ext_resource type="Shape3D" uid="uid://bc2jaqy5l160t" path="res://Module/Modules/Player/Shapes/PlayerCollision.tres" id="1_uwttx"]
+[ext_resource type="Script" path="res://Module/Modules/Player/Scripts/PlayerCameraMovement.gd" id="4_ucf33"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_irp6g"]
+height = 2.82136
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5r6b6"]
+
+[node name="Player" type="Node3D"]
+
+[node name="PlayerCharacterBody" type="CharacterBody3D" parent="."]
+script = ExtResource("1_1x0dp")
+
+[node name="PlayerCollision" type="CollisionShape3D" parent="PlayerCharacterBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.375, 0)
+shape = ExtResource("1_uwttx")
+
+[node name="PlayerAnimSprite" type="AnimatedSprite3D" parent="PlayerCharacterBody"]
+offset = Vector2(0, 16)
+pixel_size = 0.1
+texture_filter = 0
+sprite_frames = ExtResource("1_m0lfa")
+animation = &"Default"
+
+[node name="CameraBoomCollision" type="CollisionShape3D" parent="PlayerCharacterBody"]
+transform = Transform3D(1, 0, 0, 0, 0.055473, -0.99846, 0, 0.99846, 0.055473, -0.0666996, 1.90502, 1.46823)
+shape = SubResource("CapsuleShape3D_irp6g")
+
+[node name="CameraRigidBody" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999391, -0.0348995, 0, 0.0348995, 0.999391, 0, 2, 3.5)
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("4_ucf33")
+track_speed = null
+track_min_offset = null
+track_max_offset = null
+noise_scale = null
+
+[node name="CameraCollision" type="CollisionShape3D" parent="CameraRigidBody"]
+shape = SubResource("SphereShape3D_5r6b6")
+
+[node name="Camera" type="Camera3D" parent="CameraRigidBody/CameraCollision"]
+fov = 60.0

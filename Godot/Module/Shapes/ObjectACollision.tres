@@ -1,0 +1,4 @@
+[gd_resource type="BoxShape3D" format=3 uid="uid://beobgegkimpy3"]
+
+[resource]
+size = Vector3(7.5, 1.5, 1.5)
