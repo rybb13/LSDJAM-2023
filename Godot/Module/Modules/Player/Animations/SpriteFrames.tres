@@ -1,13 +1,13 @@
 [gd_resource type="SpriteFrames" load_steps=81 format=3 uid="uid://dboreqab0yixl"]
 
-[ext_resource type="Texture2D" uid="uid://5ffijmsm1bd" path="res://Module/Modules/Player/Scenes/Images/SpriteSheets/Stand/StandDown.png" id="1_boijd"]
-[ext_resource type="Texture2D" uid="uid://cpnjop8fefpyw" path="res://Module/Modules/Player/Scenes/Images/SpriteSheets/Stand/StandLeft.png" id="2_nfx0p"]
-[ext_resource type="Texture2D" uid="uid://cmy7p2bfrmim7" path="res://Module/Modules/Player/Scenes/Images/SpriteSheets/Stand/StandRight.png" id="3_mbpah"]
-[ext_resource type="Texture2D" uid="uid://btwm4m5c2wdu0" path="res://Module/Modules/Player/Scenes/Images/SpriteSheets/Stand/StandUp.png" id="4_ej2p5"]
-[ext_resource type="Texture2D" uid="uid://cy0mrpcpepq3d" path="res://Module/Modules/Player/Scenes/Images/SpriteSheets/Walk/WalkDown.png" id="5_8wc85"]
-[ext_resource type="Texture2D" uid="uid://c07i1irjcivqq" path="res://Module/Modules/Player/Scenes/Images/SpriteSheets/Walk/WalkLeft.png" id="6_htxct"]
-[ext_resource type="Texture2D" uid="uid://ddwgj3frtain6" path="res://Module/Modules/Player/Scenes/Images/SpriteSheets/Walk/WalkRight.png" id="7_4wrly"]
-[ext_resource type="Texture2D" uid="uid://wu0niwa7aq68" path="res://Module/Modules/Player/Scenes/Images/SpriteSheets/Walk/WalkUp.png" id="8_gb6mp"]
+[ext_resource type="Texture2D" uid="uid://5ffijmsm1bd" path="res://Module/Modules/Player/Images/SpriteSheets/Stand/StandDown.png" id="1_boijd"]
+[ext_resource type="Texture2D" uid="uid://cpnjop8fefpyw" path="res://Module/Modules/Player/Images/SpriteSheets/Stand/StandLeft.png" id="2_nfx0p"]
+[ext_resource type="Texture2D" uid="uid://cmy7p2bfrmim7" path="res://Module/Modules/Player/Images/SpriteSheets/Stand/StandRight.png" id="3_mbpah"]
+[ext_resource type="Texture2D" uid="uid://btwm4m5c2wdu0" path="res://Module/Modules/Player/Images/SpriteSheets/Stand/StandUp.png" id="4_ej2p5"]
+[ext_resource type="Texture2D" uid="uid://cy0mrpcpepq3d" path="res://Module/Modules/Player/Images/SpriteSheets/Walk/WalkDown.png" id="5_8wc85"]
+[ext_resource type="Texture2D" uid="uid://c07i1irjcivqq" path="res://Module/Modules/Player/Images/SpriteSheets/Walk/WalkLeft.png" id="6_htxct"]
+[ext_resource type="Texture2D" uid="uid://ddwgj3frtain6" path="res://Module/Modules/Player/Images/SpriteSheets/Walk/WalkRight.png" id="7_4wrly"]
+[ext_resource type="Texture2D" uid="uid://wu0niwa7aq68" path="res://Module/Modules/Player/Images/SpriteSheets/Walk/WalkUp.png" id="8_gb6mp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nqgx3"]
 atlas = ExtResource("1_boijd")

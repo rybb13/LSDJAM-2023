@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddwgj3frtain6"
-path="res://.godot/imported/WalkRight.png-1ca297dc47215c8194fd19cdf1401768.ctex"
+path="res://.godot/imported/WalkRight.png-b50dd64d972bd5d59972a16d15353926.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Module/Modules/Player/Scenes/Images/SpriteSheets/Walk/WalkRight.png"
-dest_files=["res://.godot/imported/WalkRight.png-1ca297dc47215c8194fd19cdf1401768.ctex"]
+source_file="res://Module/Modules/Player/Images/SpriteSheets/Walk/WalkRight.png"
+dest_files=["res://.godot/imported/WalkRight.png-b50dd64d972bd5d59972a16d15353926.ctex"]
 
 [params]
 
