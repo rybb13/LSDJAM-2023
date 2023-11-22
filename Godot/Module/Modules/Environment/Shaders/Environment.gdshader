@@ -1,7 +1,7 @@
 shader_type spatial;
 render_mode unshaded;
 
-uniform sampler2D sprite_sheet: filter_nearest;
+uniform sampler2D sprite_sheet: filter_nearest, source_color;
 uniform uint frames = 8;
 uniform float speed = 1.0;
 uniform float size = 10.0;
