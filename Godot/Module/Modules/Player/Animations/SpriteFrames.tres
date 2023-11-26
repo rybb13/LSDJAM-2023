@@ -326,7 +326,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Default",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -355,7 +355,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"StandDown",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -384,7 +384,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"StandLeft",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -413,7 +413,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"StandRight",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -442,7 +442,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"StandUp",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -471,7 +471,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"WalkDown",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -500,7 +500,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"WalkLeft",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -529,7 +529,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"WalkRight",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -558,5 +558,5 @@ animations = [{
 }],
 "loop": true,
 "name": &"WalkUp",
-"speed": 5.0
+"speed": 8.0
 }]

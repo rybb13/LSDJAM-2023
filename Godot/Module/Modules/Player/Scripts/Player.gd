@@ -1,11 +1,12 @@
 extends CharacterBody3D
 
-@export var move_speed = 8.0
+@export var move_speed = 5.0
 @export var move_acceleration = 50.0
 @export var move_deceleration = 45.0
 @export var gravity_scale = 1.0
 
 @onready var anim_sprite = get_node("PlayerAnimSprite")
+@onready var footstep_audio = get_node("../PlayerFootstepAudio")
 
 var pressed_keys: Array
 var input = Vector2.ZERO
@@ -28,6 +29,7 @@ func _process(_delta: float):
 	update_mode_direction()
 	update_input()
 	update_sprite()
+	check_anim_frame()
 
 func _physics_process(delta: float):
 	apply_gravity(gravity_scale, delta)
@@ -99,3 +101,9 @@ func update_input():
 
 func update_sprite():
 	anim_sprite.play(get_anim_name(mode, direction))
+
+func check_anim_frame():
+	var frame = anim_sprite.get_frame()
+	
+	if mode == Mode.Walk and (frame == 1 or frame == 5):
+		footstep_audio.play()
