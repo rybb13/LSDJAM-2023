@@ -23,13 +23,14 @@ sprite_frames = ExtResource("1_m0lfa")
 animation = &"WalkDown"
 speed_scale = 1.5
 
+[node name="PlayerFootstepAudio" type="AudioStreamPlayer3D" parent="PlayerCharacterBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.476522, 0.262933)
+stream = ExtResource("5_ddbqo")
+
 [node name="PlayerCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125, 5)
 fov = 54.0
 script = ExtResource("4_imxds")
 
 [node name="PlayerListener" type="AudioListener3D" parent="PlayerCamera"]
-
-[node name="PlayerFootstepAudio" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.476522, 0.262933)
-stream = ExtResource("5_ddbqo")
+current = true

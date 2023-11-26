@@ -6,7 +6,7 @@ extends CharacterBody3D
 @export var gravity_scale = 1.0
 
 @onready var anim_sprite = get_node("PlayerAnimSprite")
-@onready var footstep_audio = get_node("../PlayerFootstepAudio")
+@onready var footstep_audio = get_node("PlayerFootstepAudio")
 
 var pressed_keys: Array
 var input = Vector2.ZERO
