@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cpe3hk1jg8261"]
+
+[ext_resource type="Shader" path="res://Module/Shaders/Pixelation.gdshader" id="1_7fpk2"]
+
+[resource]
+render_priority = 127
+shader = ExtResource("1_7fpk2")
+shader_parameter/pixel_size = 4

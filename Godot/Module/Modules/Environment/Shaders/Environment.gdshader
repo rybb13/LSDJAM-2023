@@ -2,6 +2,7 @@ shader_type spatial;
 render_mode unshaded;
 
 uniform sampler2D sprite_sheet: filter_nearest, source_color;
+uniform vec2 scale = vec2(1.0);
 uniform uint frames = 8;
 uniform float speed = 1.0;
 uniform float size = 10.0;
@@ -10,7 +11,7 @@ uniform float brightness: hint_range(0.0, 1.0) = 1.0;
 uniform float contrast: hint_range(0.0, 1.0) = 1.0;
 
 vec2 sprite_anim(vec2 uv, float anim_speed, uint anim_frames) {
-	return fract(uv * float(anim_frames)) / vec2(float(anim_frames), 1.0) + vec2(floor(fract(TIME * anim_speed) * float(anim_frames)) / float(anim_frames), 0.0);
+	return fract(uv * scale * float(anim_frames)) / vec2(float(anim_frames), 1.0) + vec2(floor(fract(TIME * anim_speed) * float(anim_frames)) / float(anim_frames), 0.0);
 }
 
 void fragment() {
