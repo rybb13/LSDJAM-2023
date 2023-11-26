@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@export var grid_size = 0.1
 @export var move_speed = 5.0
 @export var move_acceleration = 50.0
 @export var move_deceleration = 45.0
@@ -32,6 +33,8 @@ func _process(_delta: float):
 	check_anim_frame()
 
 func _physics_process(delta: float):
+	#self.global_position = saved_position
+	
 	apply_gravity(gravity_scale, delta)
 	
 	# Get 3d direction from 2d input
@@ -40,6 +43,14 @@ func _physics_process(delta: float):
 	apply_movement(move_direction, move_speed, move_acceleration, move_deceleration, delta)
 	
 	move_and_slide()
+	
+	var saved_velocity = self.velocity
+	
+	# Snap position to 'pixel' grid
+	self.global_position.x = round(self.global_position.x / grid_size) * grid_size
+	self.global_position.z = round(self.global_position.z / grid_size) * grid_size
+	
+	self.velocity = saved_velocity
 
 func has_input() -> bool:
 	return input != Vector2.ZERO
@@ -107,3 +118,10 @@ func check_anim_frame():
 	
 	if mode == Mode.Walk and (frame == 1 or frame == 5):
 		footstep_audio.play()
+
+func align_to_grid(value: Vector3, size: float) -> Vector3:
+	return Vector3(
+			floor(value.x * size),
+			floor(value.y * size),
+			floor(value.z * size)
+	) / size
