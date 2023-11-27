@@ -4,9 +4,8 @@
 [ext_resource type="SpriteFrames" uid="uid://dboreqab0yixl" path="res://Module/Modules/Player/Animations/SpriteFrames.tres" id="1_m0lfa"]
 [ext_resource type="Shape3D" uid="uid://bc2jaqy5l160t" path="res://Module/Modules/Player/Shapes/PlayerCollision.tres" id="1_uwttx"]
 [ext_resource type="Script" path="res://Module/Modules/Player/Scripts/PlayerCamera.gd" id="4_imxds"]
+[ext_resource type="AudioStream" uid="uid://dhxio011rx5m5" path="res://Module/Modules/Player/Sounds/Footstep-1.wav" id="5_ddbqo"]
 [ext_resource type="Material" uid="uid://cpe3hk1jg8261" path="res://Module/Materials/Pixelation.tres" id="5_v7l5s"]
-
-[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_lsufv"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_v7p6u"]
 material = ExtResource("5_v7l5s")
@@ -33,7 +32,7 @@ speed_scale = 1.5
 
 [node name="PlayerFootstepAudio" type="AudioStreamPlayer3D" parent="PlayerCharacterBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.476522, 0.262933)
-stream = SubResource("AudioStreamWAV_lsufv")
+stream = ExtResource("5_ddbqo")
 
 [node name="PlayerCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125, 5)
