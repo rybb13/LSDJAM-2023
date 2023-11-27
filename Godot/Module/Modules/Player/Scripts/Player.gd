@@ -44,13 +44,7 @@ func _physics_process(delta: float):
 	
 	move_and_slide()
 	
-	var saved_velocity = self.velocity
-	
-	# Snap position to 'pixel' grid
-	self.global_position.x = round(self.global_position.x / grid_size) * grid_size
-	self.global_position.z = round(self.global_position.z / grid_size) * grid_size
-	
-	self.velocity = saved_velocity
+	snap_position(grid_size)
 
 func has_input() -> bool:
 	return input != Vector2.ZERO
@@ -119,9 +113,10 @@ func check_anim_frame():
 	if mode == Mode.Walk and (frame == 1 or frame == 5):
 		footstep_audio.play()
 
-func align_to_grid(value: Vector3, size: float) -> Vector3:
-	return Vector3(
-			floor(value.x * size),
-			floor(value.y * size),
-			floor(value.z * size)
-	) / size
+func snap_position(size: float):
+	var saved_velocity = self.velocity
+	
+	self.global_position.x = round(self.global_position.x / size) * size
+	self.global_position.z = round(self.global_position.z / size) * size
+	
+	self.velocity = saved_velocity
