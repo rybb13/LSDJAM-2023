@@ -32,18 +32,15 @@ func _process(_delta: float):
 	update_sprite()
 	check_anim_frame()
 
-func _physics_process(delta: float):
-	#self.global_position = saved_position
-	
+func _physics_process(delta: float):	
 	apply_gravity(gravity_scale, delta)
 	
 	# Get 3d direction from 2d input
 	var move_direction = (transform.basis * Vector3(input.x, 0.0, input.y)).normalized()
 	
 	apply_movement(move_direction, move_speed, move_acceleration, move_deceleration, delta)
-	
 	move_and_slide()
-	
+
 	snap_position(grid_size)
 
 func has_input() -> bool:
